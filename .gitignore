@@ -213,3 +213,5 @@ pretrained_sepformer_libri3mix/
 pred1.wav
 pred2.wav
 pred3.wav
+arabic_data/
+arabic_raw/

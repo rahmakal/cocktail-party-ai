@@ -7,7 +7,7 @@ model = SepformerSeparation.from_hparams(
     run_opts={"device": "cuda:0"},
 )
 
-est_sources = model.separate_file("custom_libri3mix/mix/sample_0002.wav")
+est_sources = model.separate_file("arabic_data/mix/sample_0000.wav")
 
 # est_sources is typically [batch, time, speakers]
 pred1 = est_sources[0, :, 0].detach().cpu().numpy()
