@@ -1,0 +1,50 @@
+# ── Data ──────────────────────────────────────────────────────────────────────
+data:
+  train_dir: data/arabic_data/train
+  val_dir:   data/arabic_data/val
+  sample_rate: 8000
+
+# ── Model ─────────────────────────────────────────────────────────────────────
+model:
+  n_sources:      3
+  encoder_dim:    512
+  feature_dim:    128
+  hidden_dim:     512
+  kernel_size:    3
+  n_stacks:       3
+  n_layers:       8
+  encoder_kernel: 16
+
+# ── Training ──────────────────────────────────────────────────────────────────
+training:
+  epochs:        100
+  batch_size:    4
+  num_workers:   4
+  grad_clip:     5.0
+  mixed_precision: true
+
+# ── Optimizer ─────────────────────────────────────────────────────────────────
+optimizer:
+  lr:           0.001
+  weight_decay: 0.0
+
+# ── LR Scheduler (warmup + cosine annealing) ──────────────────────────────────
+scheduler:
+  warmup_epochs: 5
+  min_lr:        1.0e-6
+
+# ── Checkpointing ─────────────────────────────────────────────────────────────
+checkpoint:
+  dir:          checkpoints/
+  save_every:   5        # save every N epochs
+  keep_last:    3        # keep only last N checkpoints
+
+# ── Logging ───────────────────────────────────────────────────────────────────
+logging:
+  tensorboard_dir: runs/
+  log_every:       10    # log every N batches
+
+# ── Early stopping ────────────────────────────────────────────────────────────
+early_stopping:
+  patience:  15          # stop if val SI-SNR doesn't improve for N epochs
+  min_delta: 0.01        # minimum improvement to count

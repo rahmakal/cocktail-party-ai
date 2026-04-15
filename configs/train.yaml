@@ -1,0 +1,35 @@
+training:
+  epochs: 200
+  early_stopping: 20
+  batch_size: 48
+  accumulation_steps: 2       # effective batch = 12 × 2 = 24
+  learning_rate: 0.00005
+  grad_clip: 30.0               # ← réduit : 1.0 provoquait des instabilités
+  save_every: 10
+  num_workers: 4
+  seed: 42
+
+scheduler:
+  name: warmup_cosine
+  warmup_epochs: 5            # ← augmenté : plus de warmup avec peu de données
+  min_lr: 0.0000001
+optimizer:
+  name: adam
+  weight_decay: 0.001
+
+model:
+  n_filters: 256
+  filter_length: 16
+  stride: 8
+  n_blocks: 6
+  n_repeats: 3
+  bn_chan: 128
+  hid_chan: 256
+  skip_chan: 128
+  norm_type: gLN
+  mask_act: relu
+  gradient_checkpointing: true
+
+paths:
+  checkpoint_dir: checkpoints_3src_2
+  log_dir: logs_3src_2

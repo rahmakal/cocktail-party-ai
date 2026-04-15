@@ -1,0 +1,10 @@
+dataset:
+  root_dir: /home/lovelyy/conv-tasnet-project/data/mixtures     # chemin vers le dossier mixture/
+  n_src: 3                     # nombre de sources (source_1 à source_5)
+  sample_rate: 16000            # fréquence d'échantillonnage en Hz
+  segment_duration: 5.0        # durée d'un segment en secondes (0 = fichier entier)
+
+splits:
+  train_ratio: 0.8             # 80% → 26 mixtures
+  val_ratio: 0.1             # 10% → 3 mixtures, 3 en test
+  test_ratio: 0.1              # calculé automatiquement 
