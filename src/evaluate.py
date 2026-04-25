@@ -1,9 +1,9 @@
 """
 evaluate.py — Évaluation complète du modèle sur le test set
 Usage :
-    python evaluate.py
-    python evaluate.py --ckpt checkpoints_3src/best.ckpt
-    python evaluate.py --ckpt checkpoints/epoch_30.ckpt
+    python main.py evaluate
+    python main.py evaluate --ckpt checkpoints_3src/best.ckpt
+    python main.py evaluate --ckpt checkpoints/epoch_30.ckpt
 
 Installer les métriques optionnelles :
     pip install pesq pystoi

@@ -1,9 +1,9 @@
 """
 separate.py — Séparation de sources avec le modèle entraîné
 Usage :
-    python separate.py --mix data/mixture/mix_0/mixture.wav
-    python separate.py --mix data/mixture/mix_0/mixture.wav --ckpt checkpoints/best.ckpt
-    python separate.py --mix mon_audio.wav --out_dir outputs/separated_audio
+    python main.py separate --mix data/mixture/mix_0/mixture.wav
+    python main.py separate --mix data/mixture/mix_0/mixture.wav --ckpt checkpoints/best.ckpt
+    python main.py separate --mix mon_audio.wav --out_dir outputs/separated_audio
 """
 
 import os
@@ -110,7 +110,7 @@ def main():
     if not os.path.exists(args.ckpt):
         raise FileNotFoundError(
             f"Checkpoint introuvable : {args.ckpt}\n"
-            f"Lancez d'abord : python train.py"
+            f"Lancez d'abord : python main.py train"
         )
 
     load_checkpoint(model, args.ckpt, device)

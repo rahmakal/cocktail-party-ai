@@ -27,13 +27,13 @@ Structures supportées :
 
 Usage :
     # Mozilla Common Voice
-    python generate_mixtures.py \\
+    python main.py generate \\
         --src_dir data/raw_sources \\
         --tsv     data/raw_sources/validated.tsv \\
         --n_mix   8000 --n_src 2
 
     # Dossiers classiques
-    python generate_mixtures.py \\
+    python main.py generate \\
         --src_dir data/raw_sources \\
         --n_mix   8000 --n_src 2
 """
@@ -498,7 +498,7 @@ def main():
     print(f"  Val          : {n_val}")
     print(f"  Test         : {n_test}")
     print(f"  Split file   : {split_path}")
-    print(f"\n  Étape suivante : python train.py")
+    print(f"\n  Étape suivante : python main.py train")
     print(f"{'='*58}\n")
 
 

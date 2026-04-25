@@ -8,8 +8,8 @@ train.py — Conv-TasNet
   - Suivi du temps (epoch / total estimé / ETA)
 
 Usage :
-    python train.py
-    python train.py --resume checkpoints_3src_2/best.ckpt
+    python main.py train
+    python main.py train --resume checkpoints_3src_2/best.ckpt
 """
 
 import os

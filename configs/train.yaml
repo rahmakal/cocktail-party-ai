@@ -2,7 +2,7 @@ training:
   epochs: 200
   early_stopping: 20
   batch_size: 48
-  accumulation_steps: 2       # effective batch = 12 × 2 = 24
+  accumulation_steps: 2       # effective batch = 48 × 2 = 96
   learning_rate: 0.00005
   grad_clip: 30.0               # ← réduit : 1.0 provoquait des instabilités
   save_every: 10
