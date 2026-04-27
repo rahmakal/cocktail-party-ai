@@ -1,0 +1,5 @@
+torch>=2.0.0
+torchaudio>=2.0.0
+asteroid>=0.6.0
+numpy>=1.24.0
+matplotlib>=3.10.8
